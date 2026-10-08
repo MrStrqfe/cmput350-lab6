@@ -1,3 +1,0 @@
-/Users/jensenlee/Developer/cmput350-lab6/debug/_deps/sfml-subbuild/CMakeFiles/sfml-populate.dir
-/Users/jensenlee/Developer/cmput350-lab6/debug/_deps/sfml-subbuild/CMakeFiles/edit_cache.dir
-/Users/jensenlee/Developer/cmput350-lab6/debug/_deps/sfml-subbuild/CMakeFiles/rebuild_cache.dir
