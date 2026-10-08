@@ -1,1 +1,18 @@
 Answer written questions here:
+
+Question 1:
+Answer: With a low count (50), every pixel finishes quickly,
+so the image appears right away and the program stays responsive
+while you move or zoom. Also, starting at a high iteration would make
+each frame very slow since I need to finish every pixel before showing the next frame.
+
+Question 2:
+Answer: Each pixel is independent, so I can split the image into chunks, and
+have a main computer hand each chunk to a different computer or core. Each core or
+computer computes the escape times for its own pixels, then pushing it into one computer,
+making the rendering much faster.
+
+Question 3:
+Answer: The image would look smoother. Right now each pixel uses just one spot
+so budy areas look noisy and edges look jagged. Using four spots would take longer,
+since each pixel takes four calculations.
