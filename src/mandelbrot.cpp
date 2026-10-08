@@ -246,18 +246,14 @@ double MandelbrotViewer::mandelbrotSmooth(double cX, double cY, int maxIters) co
     //       higher radius (this is still correct, since divergence -> infty), but with more
     //       computational cost (since you need to simulate more steps).
     const double escapeRadius = 4.0;
-    const double escapeRadiusSq = escapeRadius * escapeRadius;
-
     double zX = 0.0;
     double zY = 0.0;
     for (int i = 1; i <= maxIters; i++) {
         double zPrimeX = (zX * zX) - (zY * zY) + cX;
         double zPrimeY = (2 * zX * zY) + cY;
 
-        double modSq = (zPrimeX * zPrimeX) + (zPrimeY * zPrimeY);
-        if (modSq > escapeRadiusSq) {
-            // sqrt only runs once, for the pixel that actually escapes.
-            double modulus = std::sqrt(modSq);
+        double modulus = std::sqrt((zPrimeX * zPrimeX) + (zPrimeY * zPrimeY));
+        if (modulus > escapeRadius) {
             // Fractional iteration count: n + 1 - ln(ln|z_n|) / ln(2)
             return i + 1 - std::log(std::log(modulus)) / LOG_2;
         }
